@@ -1,83 +1,63 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyApp.MainPage"
+             x:Class="CVApp.MainPage"
              BackgroundColor="#f4f4f4">
     <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-            <!-- Título -->
-            <Label Text="Formulario de Datos" 
-                   FontSize="24" 
-                   TextColor="#333" 
-                   HorizontalOptions="Center" />
-
-            <!-- Campo de Nombre y Apellidos -->
-            <Label Text="Nombre y Apellidos:" TextColor="#333" />
-            <Entry x:Name="NombreEntry" Placeholder="Ingresa tu nombre completo" />
-
-            <!-- Fecha de Nacimiento -->
-            <Label Text="Fecha de Nacimiento:" TextColor="#333" />
-            <DatePicker x:Name="FechaNacimientoPicker" />
-
-            <!-- Ocupación -->
-            <Label Text="Ocupación:" TextColor="#333" />
-            <Entry x:Name="OcupacionEntry" Placeholder="Ingresa tu ocupación" />
-
-            <!-- Contacto -->
-            <Label Text="Contacto (Teléfono o Email):" TextColor="#333" />
-            <Entry x:Name="ContactoEntry" Placeholder="Teléfono o email" />
-
-            <!-- Nacionalidad -->
-            <Label Text="Nacionalidad:" TextColor="#333" />
-            <Picker x:Name="NacionalidadPicker" Title="Selecciona una nacionalidad">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Peruana</x:String>
-                        <x:String>Mexicana</x:String>
-                        <x:String>Argentina</x:String>
-                        <x:String>Española</x:String>
-                        <x:String>Otra</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-
-            <!-- Nivel de Inglés -->
-            <Label Text="Nivel de Inglés:" TextColor="#333" />
-            <StackLayout Orientation="Horizontal" Spacing="10">
-                <RadioButton Content="Básico" Value="Básico" />
-                <RadioButton Content="Intermedio" Value="Intermedio" />
-                <RadioButton Content="Avanzado" Value="Avanzado" />
-                <RadioButton Content="Fluido" Value="Fluido" />
+        <StackLayout BackgroundColor="White" Padding="20">
+            <!-- Cabecera -->
+            <StackLayout Orientation="Horizontal" BackgroundColor="#333" Padding="20">
+                <Frame WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="White" HasShadow="False">
+                    <Image Source="profile.jpg" Aspect="AspectFill" />
+                </Frame>
+                <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                    <Label Text="José Martínez" FontSize="24" TextColor="#ccc" HorizontalTextAlignment="Center" />
+                    <Label Text="Puesto ocupado / Buscado" FontSize="18" TextColor="#8f8f8f" HorizontalTextAlignment="Center" />
+                </StackLayout>
             </StackLayout>
 
-            <!-- Lenguajes de Programación -->
-            <Label Text="Lenguajes de Programación:" TextColor="#333" />
-            <StackLayout>
-                <CheckBox x:Name="PHPCheckBox" Content="PHP" />
-                <CheckBox x:Name="JavaScriptCheckBox" Content="JavaScript" />
-                <CheckBox x:Name="PythonCheckBox" Content="Python" />
-                <CheckBox x:Name="JavaCheckBox" Content="Java" />
-                <CheckBox x:Name="CPlusPlusCheckBox" Content="C++" />
+            <!-- Contenido -->
+            <StackLayout Orientation="Horizontal" Spacing="20" Margin="0,20">
+                <!-- Barra lateral -->
+                <StackLayout WidthRequest="150" BackgroundColor="#ececec" Padding="10">
+                    <Label Text="Contacto" FontSize="18" TextColor="#333" />
+                    <Label Text="📞 999 999 999" FontSize="14" TextColor="#333" />
+                    <Label Text="📧 jose.martinez@gmail.com" FontSize="14" TextColor="#333" />
+                    <Label Text="📍 México DF" FontSize="14" TextColor="#333" />
+                    <Label Text="linkedln.com/jose-martinez" FontSize="14" TextColor="#333" />
+
+                    <Label Text="Idiomas" FontSize="18" TextColor="#333" Margin="0,20,0,0" />
+                    <Label Text="Español: Nativo" FontSize="14" TextColor="#333" />
+                    <Label Text="Inglés: Bilingüe (TOEIC 950)" FontSize="14" TextColor="#333" />
+                    <Label Text="Francés: Intermedio (B2)" FontSize="14" TextColor="#333" />
+
+                    <Label Text="Aptitudes" FontSize="18" TextColor="#333" Margin="0,20,0,0" />
+                    <Label Text="• Inteligencia emocional" FontSize="14" TextColor="#333" />
+                    <Label Text="• Espíritu crítico" FontSize="14" TextColor="#333" />
+                    <Label Text="• Trabajo en equipo" FontSize="14" TextColor="#333" />
+                    <Label Text="• Capacidad analítica" FontSize="14" TextColor="#333" />
+                    <Label Text="• Habilidades físicas" FontSize="14" TextColor="#333" />
+                </StackLayout>
+
+                <!-- Contenido principal -->
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Perfil" FontSize="20" TextColor="#333" />
+                    <Label Text="Trabajador Social con 4 años de experiencia en proyectos colectivos. Mi objetivo es lograr que los jóvenes obtengan acceso a la educación superior mediante logros deportivos."
+                           FontSize="14" TextColor="#666" />
+
+                    <Label Text="Experiencia Laboral" FontSize="20" TextColor="#333" Margin="0,20,0,10" />
+                    <StackLayout>
+                        <Label Text="Trabajador Social" FontSize="16" TextColor="#130a0a" />
+                        <Label Text="México DF, 2022 – Actualmente" FontSize="14" TextColor="#221d1d" />
+                        <Label Text="• Coordinador y mediador entre equipos de ayuda psicológica." FontSize="14" TextColor="#444" />
+                        <Label Text="• Velar por la salud mental del equipo y miembros." FontSize="14" TextColor="#444" />
+                    </StackLayout>
+
+                    <Label Text="Formación" FontSize="20" TextColor="#333" Margin="0,20,0,10" />
+                    <Label Text="Grado de Trabajo Social" FontSize="16" TextColor="#130a0a" />
+                    <Label Text="ESMA, Madrid (2012 – 2015)" FontSize="14" TextColor="#444" />
+                </StackLayout>
             </StackLayout>
-
-            <!-- Aptitudes -->
-            <Label Text="Aptitudes:" TextColor="#333" />
-            <Entry x:Name="AptitudesEntry" Placeholder="Escribe tus aptitudes" />
-
-            <!-- Habilidades -->
-            <Label Text="Habilidades:" TextColor="#333" />
-            <StackLayout>
-                <CheckBox x:Name="DesarrolloWebCheckBox" Content="Desarrollo Web" />
-                <CheckBox x:Name="AnalisisDatosCheckBox" Content="Análisis de Datos" />
-                <CheckBox x:Name="DisenoGraficoCheckBox" Content="Diseño Gráfico" />
-            </StackLayout>
-
-            <!-- Perfil -->
-            <Label Text="Perfil:" TextColor="#333" />
-            <Editor x:Name="PerfilEditor" HeightRequest="100" Placeholder="Escribe una breve descripción sobre ti" />
-
-            <!-- Botón Enviar -->
-            <Button Text="Enviar" BackgroundColor="#333" TextColor="White" Clicked="OnEnviarClicked" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
