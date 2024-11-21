@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.MainPage"
+             BackgroundColor="#f4f4f4">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Título -->
+            <Label Text="Formulario de Datos" 
+                   FontSize="24" 
+                   TextColor="#333" 
+                   HorizontalOptions="Center" />
+
+            <!-- Campo de Nombre y Apellidos -->
+            <Label Text="Nombre y Apellidos:" TextColor="#333" />
+            <Entry x:Name="NombreEntry" Placeholder="Ingresa tu nombre completo" />
+
+            <!-- Fecha de Nacimiento -->
+            <Label Text="Fecha de Nacimiento:" TextColor="#333" />
+            <DatePicker x:Name="FechaNacimientoPicker" />
+
+            <!-- Ocupación -->
+            <Label Text="Ocupación:" TextColor="#333" />
+            <Entry x:Name="OcupacionEntry" Placeholder="Ingresa tu ocupación" />
+
+            <!-- Contacto -->
+            <Label Text="Contacto (Teléfono o Email):" TextColor="#333" />
+            <Entry x:Name="ContactoEntry" Placeholder="Teléfono o email" />
+
+            <!-- Nacionalidad -->
+            <Label Text="Nacionalidad:" TextColor="#333" />
+            <Picker x:Name="NacionalidadPicker" Title="Selecciona una nacionalidad">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Peruana</x:String>
+                        <x:String>Mexicana</x:String>
+                        <x:String>Argentina</x:String>
+                        <x:String>Española</x:String>
+                        <x:String>Otra</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Nivel de Inglés -->
+            <Label Text="Nivel de Inglés:" TextColor="#333" />
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <RadioButton Content="Básico" Value="Básico" />
+                <RadioButton Content="Intermedio" Value="Intermedio" />
+                <RadioButton Content="Avanzado" Value="Avanzado" />
+                <RadioButton Content="Fluido" Value="Fluido" />
+            </StackLayout>
+
+            <!-- Lenguajes de Programación -->
+            <Label Text="Lenguajes de Programación:" TextColor="#333" />
+            <StackLayout>
+                <CheckBox x:Name="PHPCheckBox" Content="PHP" />
+                <CheckBox x:Name="JavaScriptCheckBox" Content="JavaScript" />
+                <CheckBox x:Name="PythonCheckBox" Content="Python" />
+                <CheckBox x:Name="JavaCheckBox" Content="Java" />
+                <CheckBox x:Name="CPlusPlusCheckBox" Content="C++" />
+            </StackLayout>
+
+            <!-- Aptitudes -->
+            <Label Text="Aptitudes:" TextColor="#333" />
+            <Entry x:Name="AptitudesEntry" Placeholder="Escribe tus aptitudes" />
+
+            <!-- Habilidades -->
+            <Label Text="Habilidades:" TextColor="#333" />
+            <StackLayout>
+                <CheckBox x:Name="DesarrolloWebCheckBox" Content="Desarrollo Web" />
+                <CheckBox x:Name="AnalisisDatosCheckBox" Content="Análisis de Datos" />
+                <CheckBox x:Name="DisenoGraficoCheckBox" Content="Diseño Gráfico" />
+            </StackLayout>
+
+            <!-- Perfil -->
+            <Label Text="Perfil:" TextColor="#333" />
+            <Editor x:Name="PerfilEditor" HeightRequest="100" Placeholder="Escribe una breve descripción sobre ti" />
+
+            <!-- Botón Enviar -->
+            <Button Text="Enviar" BackgroundColor="#333" TextColor="White" Clicked="OnEnviarClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
